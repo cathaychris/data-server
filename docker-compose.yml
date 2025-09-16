@@ -2,9 +2,8 @@ version: '3.8'
 
 services:
   database-api:
-    build:
-      context: .
-      dockerfile: Dockerfile # Explicitly name Dockerfile
+    image: simple-database-api:local
+    pull_policy: never
     container_name: data_index_db
     ports:
       - "5000:5000" # Map host port 5000 to container port 5000
