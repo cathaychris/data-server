@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  database-api:
+    build:
+      context: .
+      dockerfile: Dockerfile # Explicitly name Dockerfile
+    container_name: data_index_db
+    ports:
+      - "5000:5000" # Map host port 5000 to container port 5000
+    volumes:
+      - database_storage:/data # Use a named volume for persistence
+    restart: unless-stopped
+
+volumes:
+  database_storage: /home/miraex/code/data-server/data
