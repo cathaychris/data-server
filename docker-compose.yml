@@ -9,5 +9,5 @@ services:
       - "5000:5000" # Map host port 5000 to container port 5000
     volumes:
       - /home/miraex/code/data-server/data:/data # Use a named volume for persistence
-      - /home/miraex/code/data-server/app.py:/app.py # Use a named volume for persistence
+      - /home/miraex/code/data-server/app.py:/app/app.py # Use a named volume for persistence
     restart: unless-stopped
